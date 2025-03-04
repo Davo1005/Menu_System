@@ -1,3 +1,4 @@
+#include "Dish.h"
 
 Dish :: Dish  (string dishName, double dishPrice) : name(dishName), price(dishPrice) {}
 
@@ -15,7 +16,7 @@ Dish :: Dish (Dish&& other) noexcept : name (move(other.name)), price(other.pric
 
 Dish& Dish :: operator=(Dish&& other) noexcept
 {
-    if(this != other)
+    if(this != &other)
     {
         name = move(other.name);
         price = move(other.price);
@@ -27,10 +28,10 @@ void Dish :: display() const {
     cout << name << " $" << price << endl;
 }
 
-int getPrice() const {
+double Dish :: getPrice() const {
     return price;
 }
 
-string getName() const {
+string Dish :: getName() const {
     return name;
 }

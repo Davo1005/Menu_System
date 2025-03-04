@@ -1,4 +1,4 @@
-
+#include "Menu.h"
 
 Menu :: Menu (const Menu& other) {
     for (Dish* dish : other.dishes) {
@@ -19,6 +19,7 @@ Menu& Menu :: operator=(const Menu& other){
             dishes.push_back(new Dish(*dish));
         }
     }
+    return *this;
 }
 
 Menu :: Menu (Menu&& other) noexcept {

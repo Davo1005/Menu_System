@@ -1,4 +1,4 @@
-#ifdef CUSTOMER_H
+#ifndef CUSTOMER_H
 #define CUSTOMER_H
 #include <string>
 #include <vector>
@@ -6,8 +6,10 @@
 #include "Menu.h"
 #include "Dish.h"
 #include <iostream>
-using namespace std;    
 
+using namespace std;
+
+class Order;
 class Customer {
     private:
         string name;
@@ -24,4 +26,5 @@ class Customer {
         void viewOrderHistory() const;
         string getName() const;
 };
+
 #endif

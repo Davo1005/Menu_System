@@ -1,4 +1,4 @@
-#ifdef MENU_H
+#ifndef MENU_H
 #define MENU_H
 #include "Dish.h"
 #include <vector>
@@ -18,6 +18,6 @@ class Menu {
         ~Menu();
         void addDish(Dish* dish);
         void displayMenu() const;
-        Dish* getDishByName(const sstring& dishName) const;
+        Dish* getDishByName(const string& dishName) const;
     };
 #endif 

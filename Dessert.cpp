@@ -1,3 +1,5 @@
+#include "Dessert.h"
+
 Dessert :: Dessert(string dishName, double dishPrice, bool nuts) : Dish(dishName, dishPrice), containsNuts(nuts) {}
 
 void Dessert :: display() const {
