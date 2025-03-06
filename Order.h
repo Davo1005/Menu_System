@@ -21,6 +21,7 @@ class Order {
         Order& operator=(Order&& other) noexcept;
         ~Order() = default;
         void addDish(Dish* dish);
+        Customer* getCustomer() const;
         void calculateTotal();
         void displayOrder() const;
     };

@@ -47,3 +47,8 @@ void Order :: displayOrder() const
     }
     cout << "Total: $" << totalPrice << endl;
 }
+
+Customer* Order ::getCustomer() const 
+{ 
+    return customer; 
+}

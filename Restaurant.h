@@ -9,22 +9,22 @@
 
 using namespace std;    
 
-class Restaurant {
+class Restaurant 
+{
     private:
         Menu menu;
         vector<Customer*> customers;
         vector<Order> orders;
     public:
-    
-        Restaurant();
+        Restaurant () = default;
         Restaurant(const Restaurant& other);
         Restaurant& operator=(const Restaurant& other);
         Restaurant(Restaurant&& other) noexcept;
         Restaurant& operator=(Restaurant&& other) noexcept;
         ~Restaurant();
         void showMenu() const;
-        Customer* getCustomerByName(const string& name);
+        Customer* getCustomerByName(const string& name)const;
         void placeNewOrder(const string& customerName);
         void viewCustomerOrderHistory(const string& customerName) const;
-    }; 
+}; 
 #endif

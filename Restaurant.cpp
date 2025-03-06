@@ -1,10 +1,9 @@
 #include "Restaurant.h"
 
-Restaurant :: Restaurant() {}
 
 Restaurant :: Restaurant(const Restaurant& other): menu(other.menu), customers(other.customers), orders(other.orders) {}
 
-Restaurant& Restaurant :: operator=(constr Restaurant& other) {
+Restaurant& Restaurant :: operator=(const Restaurant& other) {
     if(this != &other) {
         menu = other.menu;
         customers = other.customers;
@@ -18,10 +17,10 @@ Restaurant& Restaurant :: operator=(constr Restaurant& other) {
 Restaurant :: Restaurant(Restaurant&& other) noexcept: menu(move(other.menu)), customers(move(other.customers)), orders(move(other.orders)) {}  
 
 void Restaurant :: showMenu() const {
-    menu.display();
+    menu.displayMenu();
 }
 
-Customer* Restaurant :: getCustomerByName(const string& name) {
+Customer* Restaurant :: getCustomerByName(const string& name) const {
     for(Customer* customer : customers) {
         if(customer->getName() == name) {
             return customer;
@@ -62,7 +61,7 @@ void Restaurant :: viewCustomerOrderHistory(const string& customerName) const {
         return;
     }
     for(Order order : orders) {
-        if(order.getCustomer() == customer) {
+        if(order.getCustomer()->getName() == customerName) {
             order.displayOrder();
         }
     }
